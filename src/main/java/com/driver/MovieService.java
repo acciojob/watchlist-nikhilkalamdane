@@ -21,6 +21,14 @@ public class MovieService {
         movieRepository.addDirectorInDB(director);
     }
 
+    public Movie getMovieByName(String name){
+        return movieRepository.getMovieByNameFromDB(name);
+    }
+
+    public Director getDirectorByName(String name){
+        return movieRepository.getDirectorByNameFromDB(name);
+    }
+
     public List<String> findAllMovies(){
         return movieRepository.findAllMoviesFromDB();
     }
