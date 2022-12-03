@@ -21,6 +21,10 @@ public class MovieService {
         movieRepository.addDirectorInDB(director);
     }
 
+    public void addMovieDirectorPairToDB(String movieName, String directorName){
+        movieRepository.addMovieDirectorPairInDB(movieName, directorName);
+    }
+
     public Movie getMovieByName(String name){
         return movieRepository.getMovieByNameFromDB(name);
     }
@@ -29,8 +33,20 @@ public class MovieService {
         return movieRepository.getDirectorByNameFromDB(name);
     }
 
+    public List<String> findMoviesFromDirector(String director){
+        return movieRepository.findMoviesFromDirector(director);
+    }
+
     public List<String> findAllMovies(){
         return movieRepository.findAllMoviesFromDB();
+    }
+
+    public void deleteDirector(String director){
+        movieRepository.deleteDirector(director);
+    }
+
+    public void deleteAllDirectors(){
+        movieRepository.deleteAllDirector();
     }
 
 }
